@@ -3,6 +3,7 @@
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub Repository](https://github.com/Yuzc-001/skill-router) · [Issues](https://github.com/Yuzc-001/skill-router/issues) · [Release Notes](./docs/release-notes-v0.1.1.md)
 
 [![Version](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-2FAE73?style=flat-square)](./LICENSE)
 [![Type](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
 [![Default](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
 
@@ -47,6 +48,7 @@ skill-router/
 ├── README.md               ← You are here
 ├── README.zh-CN.md         ← 简体中文版
 ├── SKILL.md                ← The routing skill itself
+├── LICENSE                 ← MIT license
 ├── VERSION                 ← Current version
 ├── CHANGELOG.md            ← Release history
 ├── docs/
@@ -79,3 +81,16 @@ See [release notes](docs/release-notes-v0.1.1.md) for details.
 3. [Use Cases](docs/use-cases.md)
 4. [With vs Without](docs/with-vs-without.md)
 5. [SKILL.md](SKILL.md) — the routing skill itself
+
+## Collaboration & Contact
+
+Issues: https://github.com/Yuzc-001/skill-router/issues
+Email: zxyu24@outlook.com
+
+Use Issues for bugs, install problems, documentation gaps, and feature discussion.
+Use email for licensing, private collaboration, or questions that should not start in a public thread.
+
+## License
+
+This project is licensed under the MIT License.
+See [LICENSE](./LICENSE) for details.

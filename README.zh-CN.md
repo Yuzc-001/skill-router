@@ -3,6 +3,7 @@
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub 仓库](https://github.com/Yuzc-001/skill-router) · [问题反馈](https://github.com/Yuzc-001/skill-router/issues) · [版本说明](./docs/release-notes-v0.1.1.md)
 
 [![版本](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![许可](https://img.shields.io/badge/license-MIT-2FAE73?style=flat-square)](./LICENSE)
 [![类型](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
 [![默认策略](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
 
@@ -47,6 +48,7 @@ skill-router/
 ├── README.md               ← 英文版
 ├── README.zh-CN.md         ← 你在这里
 ├── SKILL.md                ← skill 本体
+├── LICENSE                 ← MIT 许可证
 ├── VERSION                 ← 当前版本
 ├── CHANGELOG.md            ← 版本历史
 ├── docs/
@@ -79,3 +81,16 @@ skill-router/
 3. [典型使用场景](docs/use-cases.md)
 4. [有无 Skill Router 的差异](docs/with-vs-without.md)
 5. [SKILL.md](SKILL.md) — skill 本体
+
+## 协作与联系
+
+Issues: https://github.com/Yuzc-001/skill-router/issues
+Email: zxyu24@outlook.com
+
+`Issues` 适合提交 bug、安装问题、文档缺口和功能讨论。
+邮箱适合处理授权、私下合作，或不适合在公开线程中开始的问题。
+
+## 许可证
+
+本项目采用 MIT License。
+详情见 [LICENSE](./LICENSE)。
