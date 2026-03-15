@@ -84,13 +84,12 @@ See [release notes](docs/release-notes-v0.1.1.md) for details.
 
 ## Collaboration & Contact
 
-Issues: https://github.com/Yuzc-001/skill-router/issues
-Email: zxyu24@outlook.com
+- **Issues:** [github.com/Yuzc-001/skill-router/issues](https://github.com/Yuzc-001/skill-router/issues)
+- **Email:** [zxyu24@outlook.com](mailto:zxyu24@outlook.com)
 
-Use Issues for bugs, install problems, documentation gaps, and feature discussion.
-Use email for licensing, private collaboration, or questions that should not start in a public thread.
+Use **Issues** for bugs, install problems, documentation gaps, and feature discussion.
+Use **email** for licensing, private collaboration, or questions that should not start in a public thread.
 
 ## License
 
-This project is licensed under the MIT License.
-See [LICENSE](./LICENSE) for details.
+This project is licensed under the [MIT License](./LICENSE).

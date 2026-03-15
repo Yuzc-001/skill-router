@@ -84,13 +84,12 @@ skill-router/
 
 ## 协作与联系
 
-Issues: https://github.com/Yuzc-001/skill-router/issues
-Email: zxyu24@outlook.com
+- **Issues：** [github.com/Yuzc-001/skill-router/issues](https://github.com/Yuzc-001/skill-router/issues)
+- **Email：** [zxyu24@outlook.com](mailto:zxyu24@outlook.com)
 
-`Issues` 适合提交 bug、安装问题、文档缺口和功能讨论。
-邮箱适合处理授权、私下合作，或不适合在公开线程中开始的问题。
+**Issues** 适合提交 bug、安装问题、文档缺口和功能讨论。
+**邮箱** 适合处理授权、私下合作，或不适合在公开线程中开始的问题。
 
 ## 许可证
 
-本项目采用 MIT License。
-详情见 [LICENSE](./LICENSE)。
+本项目采用 [MIT License](./LICENSE)。
