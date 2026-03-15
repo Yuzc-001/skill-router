@@ -1,5 +1,11 @@
 # Skill Router
 
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub Repository](https://github.com/Yuzc-001/skill-router) · [Issues](https://github.com/Yuzc-001/skill-router/issues) · [Release Notes](./docs/release-notes-v0.1.1.md)
+
+[![Version](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![Type](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
+[![Default](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
+
 A low-presence routing layer for skill-heavy agent environments.
 
 > Choose the best installed skill first. Discover only when existing skills are clearly insufficient.

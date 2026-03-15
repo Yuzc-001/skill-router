@@ -1,5 +1,11 @@
 # Skill Router
 
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub 仓库](https://github.com/Yuzc-001/skill-router) · [问题反馈](https://github.com/Yuzc-001/skill-router/issues) · [版本说明](./docs/release-notes-v0.1.1.md)
+
+[![版本](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![类型](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
+[![默认策略](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
+
 一层低存在感的 skill 路由层，适用于 skill 数量较多的 agent 环境。
 
 > 先选最合适的已安装 skill。只有现有 skill 明显不够时，才进入 discovery。
