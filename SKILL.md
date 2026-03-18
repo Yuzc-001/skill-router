@@ -51,9 +51,43 @@ Skill Router does **not** activate when:
 
 ---
 
+## Bootstrap Protocol
+
+When Skill Router is first used in a new environment — or when the Local Map in `references/task-to-skill-map.md` is empty — run a one-time Bootstrap Scan before the first routing decision:
+
+1. Read the full list of installed skills with their names and descriptions
+2. For each skill, identify the capability category it primarily serves (reference `references/capability-taxonomy.md`)
+3. Add the mapping to the Local Map section of `references/task-to-skill-map.md`
+4. If two skills map to the same capability, note both and apply the tiebreaking rules under Step 3 to establish a default
+
+The bootstrap scan transforms an empty routing table into a working one without manual configuration. After bootstrap, normal routing uses the map as a fast path.
+
+**Trigger conditions:**
+- First invocation in a new environment where the Local Map is empty — runs automatically, once
+- User says "rescan my skills" or "rebuild the routing map"
+- A new skill has been installed and the user wants it mapped
+
+After the initial bootstrap, do not re-scan automatically — only when explicitly triggered.
+
+---
+
 ## Resolution Order
 
 Follow this sequence for every routing decision. Stop at the first sufficient resolution.
+
+### Step 0 — Fast path: check the Local Map
+
+Before running the full resolution sequence, check whether Bootstrap has run. If the Local Map is empty, **stop here and run the Bootstrap Protocol first** (see Bootstrap Protocol above), then return to this step.
+
+Once the Local Map is populated, check `references/task-to-skill-map.md` for a fast-path match:
+
+1. Check the **Local Map** for an entry matching this task type.
+   - If an entry exists **and** the skill is still installed → invoke that skill. Skip Steps 1–4.
+2. If no Local Map entry matches, check the **Portable Defaults** section of the same file.
+   - If a Portable Default matches, scan the installed skill list to find the skill whose description matches (Portable Defaults use capability descriptions, not skill names). Once the skill name is identified and confirmed installed → invoke it. Skip Steps 1–4.
+3. If neither layer matches → proceed to Step 1.
+
+The Local Map is a cache of previous routing decisions. The Portable Defaults are environment-agnostic baseline mappings that apply in virtually any skill environment. A hit on either means the routing problem is already solved.
 
 ### Step 1 — Identify the dominant capability
 
@@ -63,7 +97,13 @@ Do not decompose the task into a long list of sub-capabilities. Find the dominan
 
 ### Step 2 — Inspect installed skills
 
-Read the user's installed skill environment (the `available_skills` list or equivalent). Build a mental map of what is already present.
+Read the list of installed skills from the current context — in Claude Code this appears as the skill list in the system prompt or the `available-deferred-tools` section of the system reminder; in other environments use whatever skill enumeration mechanism the platform provides. Build a mental map of what is already present.
+
+Note the following during inspection:
+
+- **Skill families:** Skills with a shared prefix form coordinated sets. Routing to one may imply awareness of others in the same family. See the Skill Families section for family routing rules, and the Local Map for families discovered in your environment.
+- **Example copies:** Skills prefixed with `example-skills:` are reference copies of their originals. If both `pdf` and `example-skills:pdf` are installed, always prefer the non-example version.
+- **Pipeline skills:** Some families are designed for sequential use (plan → execute → review). When routing to a pipeline skill, determine whether the user's task calls for a single step or the full pipeline.
 
 ### Step 3 — Find the strongest installed match
 
@@ -75,18 +115,37 @@ Match the dominant capability against installed skills. Prefer:
 
 Do not combine more than two skills unless the user explicitly asks for a complex pipeline.
 
+**Tiebreaking equal matches**
+
+When two installed skills match equally well for the same capability, apply this priority order:
+
+1. **Non-example over example** — `pdf` beats `example-skills:pdf`
+2. **Dedicated over general** — a skill whose primary purpose is this capability beats one that handles it secondarily
+3. **Platform-specific over generic** — if the task names a platform, the platform skill wins
+4. **Most recently used** — if context suggests which one the user has used recently, prefer it
+
+If none of these apply, pick either one and move on. Do not present a comparison.
+
 ### Step 4 — Apply the enough-is-enough rule
 
-If the best installed match is good enough to complete the task to a reasonable standard, **route there and stop**. Do not search for something better.
+If the best installed match is good enough to complete the task to a reasonable standard, **invoke it and stop**. Do not search for something better.
 
-"Good enough" means: the user would not be materially harmed or meaningfully slowed by using this skill instead of a hypothetical perfect one.
+Apply this three-question test:
+
+1. Can this skill accept the task's input format?
+2. Can this skill produce the output type the user needs?
+3. Is the skill's output quality sufficient for the user's stated purpose?
+
+If all three answers are yes — **invoke the selected skill by name** (using the Skill tool or equivalent invocation mechanism) and stop. Do not narrate the routing decision unless the user asks. If any answer is no — proceed to Step 5.
 
 ### Step 5 — Discovery (only if Steps 3–4 fail)
 
 If no installed skill can reasonably handle the dominant capability:
 
 1. State clearly what capability is missing
-2. Search for candidate skills (via skill registries, MCP search, or web search as appropriate)
+2. Search for candidate skills:
+   - If `find-skills` is installed → delegate discovery to it
+   - Otherwise → search via skill registries, MCP search, or web search
 3. Present candidates with a brief rationale for each
 4. Route unfamiliar third-party candidates through vetting (Step 6) before recommending installation
 
@@ -110,7 +169,7 @@ If vetting raises concerns, say so plainly. Do not install first and vet later.
 
 ---
 
-## Five Routing Behaviors
+## Six Routing Behaviors
 
 These are the behaviors Skill Router adds to the environment. They are not steps — they are principles that inform every routing decision.
 
@@ -136,20 +195,25 @@ If routing is obvious (one clear match, simple task, skill already active), say 
 
 The goal is to be invisible when things are simple and helpful only when choice is genuinely hard.
 
+### 6. Self-Updating Map
+
+When a routing decision is made for a task type with no existing map entry, add it to `references/task-to-skill-map.md` after the task completes. The routing table should grow with use. Only add repeatable patterns, not one-off decisions.
+
 ---
 
 ## Guidance on Edge Cases
 
 ### Multiple equally strong matches
 
-If two or more installed skills match equally well, prefer:
-1. The one the user has used more recently (if you can tell)
-2. The one with narrower scope (specialists over generalists)
-3. Either one — just pick and move on. Do not present a comparison unless the user asks.
+Apply the tiebreaking rules under Step 3 in order. If none of them break the tie, pick either one and move on. Do not present a comparison unless the user asks.
 
 ### The user asks for a specific skill by name
 
 If the user names a specific installed skill, use it. Do not second-guess. Skill Router respects explicit intent.
+
+### Two installed skills appear identical (e.g., `pdf` and `example-skills:pdf`)
+
+Apply tiebreaking rule 1 from Step 3: always prefer the non-example version. The `example-skills:` prefix marks a reference copy. If the user explicitly asks to use the example version, respect that.
 
 ### The user wants to explore / browse skills
 
@@ -158,6 +222,21 @@ This is a legitimate use case. Help them explore, but do not treat browsing as a
 ### A task is too simple for any skill
 
 Some tasks do not need a skill at all. If the task can be done directly (a quick answer, a one-liner, a small edit), just do it. Do not route to a skill for the sake of routing.
+
+---
+
+## Skill Families
+
+Some installed skills belong to coordinated families — groups of skills that share a prefix and are designed to work together. Routing decisions should account for family-level behavior.
+
+**Identifying families:** During Bootstrap Scan, Skill Router reads each installed skill's name and description, groups skills by shared prefix, and records discovered families in the Local Map. The specific families present depend entirely on what the user has installed — they are not known in advance.
+
+**Routing rules that apply to all families:**
+
+- **Prefix grouping:** Skills with a shared prefix (e.g. `foo-*` or `bar:*`) form a coordinated set. Routing to one skill in a family should account for what else in the family is available.
+- **Pipeline families:** Some families are designed for sequential use (plan → execute → review). When routing to a pipeline family, determine whether the user needs a single step or the full pipeline before recommending one skill.
+- **Process families:** Some families govern *how* work is approached rather than *what* is produced. These typically self-route based on the current phase of work. Skill Router does not need to actively route to them unless the user asks.
+- **Example copies:** Skills prefixed with `example-skills:` are reference copies of their originals, included for learning purposes. Always lower priority than their non-example counterparts. If both `foo` and `example-skills:foo` are installed, route to `foo`.
 
 ---
 

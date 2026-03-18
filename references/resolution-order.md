@@ -10,15 +10,19 @@ This expands on the resolution order in SKILL.md with worked examples and decisi
 
 ```
 Task arrives
+  → Step 0: Fast path — check Local Map, then Portable Defaults (if hit, invoke immediately)
   → Step 1: Identify dominant capability
   → Step 2: Inspect installed skills
-  → Step 3: Find strongest installed match
-  → Step 4: Apply enough-is-enough rule
+  → Step 3: Find strongest installed match (3a direct / 3b secondary / 3c combination / 3d tiebreak)
+  → Step 4: Apply enough-is-enough rule (three-question test → invoke and stop)
   → Step 5: Discovery (only if 3–4 fail)
   → Step 6: Vet before install (only if 5 finds unfamiliar candidates)
+  → Update Local Map with the routing decision
 ```
 
 Each step is a **gate**. Stop at the first step that produces a sufficient resolution.
+
+**First run in a new environment:** If the Local Map is empty, trigger Bootstrap Scan before Step 0 to populate it from installed skills.
 
 ---
 
@@ -51,6 +55,11 @@ Sub-capabilities: research, comparison, document creation.
 - Read the full list of installed skills (names + descriptions)
 - Note which ones are relevant to the dominant capability
 - Note which ones are adjacent (might help as secondary support)
+
+**Also note during inspection:**
+- **Skill families:** Skills with a shared prefix form coordinated sets — routing to one may imply awareness of others in the family. See the Skill Families section of SKILL.md for routing rules; see the Local Map for which families are present in your environment.
+- **Example copies:** `example-skills:*` are reference copies; always prefer the non-example version when both are installed
+- **Pipeline skills:** Some skill families are designed for sequential use — determine if the task needs one step or the full pipeline
 
 **Common mistake:** Skimming skill names without reading descriptions. A skill named `data-pipeline` might also handle CSV transformation. A skill named `report-builder` might also do presentations.
 
@@ -88,33 +97,50 @@ Two installed skills used together, but **only** if the combination produces a m
 
 **Guard against over-combination.** If one skill can do the whole job at 80% quality, prefer it over a two-skill pipeline at 90% quality. The coordination cost matters.
 
+### 3d. Tiebreaking Equal Matches
+
+When two installed skills match equally well, apply this priority order:
+
+1. Non-example over example (`pdf` beats `example-skills:pdf`)
+2. Dedicated over general (primary-purpose skill beats secondary-match skill)
+3. Platform-specific over generic (if task names a platform, use the platform skill)
+4. Most recently used (if context suggests it)
+
+If none apply, pick either one. Do not present a comparison.
+
 ---
 
 ## Step 4 — Enough-Is-Enough Rule
 
 **Goal:** Decide if the installed match is sufficient. Stop searching if it is.
 
-**The test:** Would the user be materially harmed or meaningfully slowed by using this skill instead of a hypothetical perfect one?
+**The three-question test:**
 
-- If **no** → Route here. Done.
-- If **yes** → Proceed to Step 5.
+1. Can this skill accept the task's input format?
+2. Can this skill produce the output type the user needs?
+3. Is the skill's output quality sufficient for the user's stated purpose?
+
+All three yes → **invoke the skill and stop**. Any no → proceed to Step 5.
 
 ### Examples
 
-**Enough:**
+**Enough (all three yes):**
 > Task: "Create a simple PDF summary of these meeting notes"
-> Best installed match: `pdf` skill (handles PDF creation well)
-> Is this enough? Yes. A basic PDF skill can produce a clean summary. The user is not harmed.
+> Best installed match: `pdf`
+> 1. Input: plain text — yes. 2. Output: PDF — yes. 3. Quality: a clean summary — yes.
+> Route to `pdf`. Stop.
 
-**Not enough:**
+**Not enough (fails question 3):**
 > Task: "Build a real-time collaborative dashboard with live data feeds"
-> Best installed match: `frontend-design` skill (creates static web pages)
-> Is this enough? No. The task requires real-time data and collaboration features that a static frontend skill cannot provide. Discovery is warranted.
+> Best installed match: `frontend-design` (creates static web pages)
+> 1. Input: yes. 2. Output: web page — yes. 3. Quality: real-time + collaboration — no. Static frontend cannot provide this.
+> Proceed to discovery.
 
-**Borderline (still enough):**
+**Borderline — still enough:**
 > Task: "Create a professional-looking slide deck with custom animations"
-> Best installed match: `pptx` skill (creates presentations, limited animation support)
-> Is this enough? Yes. The skill can create a professional deck. Custom animations are a nice-to-have, not a requirement for the task to succeed.
+> Best installed match: `pptx` (limited animation support)
+> 1. yes. 2. yes. 3. User said "professional-looking", not "fully animated" — yes.
+> Route to `pptx`. Stop.
 
 ---
 
@@ -134,7 +160,9 @@ Two installed skills used together, but **only** if the combination produces a m
 
 **Discovery method:**
 1. State the missing capability clearly: "None of your installed skills handle [X]."
-2. Search available registries or sources
+2. Search for candidates:
+   - If `find-skills` is installed → delegate discovery to it
+   - Otherwise → search available registries or sources manually
 3. Present 1–3 candidates with brief rationale
 4. If candidates are from unfamiliar sources, proceed to Step 6
 
@@ -163,7 +191,7 @@ See `publish-safe-runtime-contract.md` for the full vetting checklist.
 | Situation | Resolution |
 |---|---|
 | One obvious installed skill matches | Use it. Say nothing about routing. |
-| Two installed skills match equally | Pick the more specific one. Move on. |
+| Two installed skills match equally | Apply 3d tiebreaker: non-example > dedicated > platform-specific > recent. |
 | Installed match is okay but not perfect | Use it. Enough is enough. |
 | No installed skill matches at all | Discovery. State the gap clearly. |
 | Discovery finds a familiar, trusted skill | Recommend installation. |
