@@ -1,8 +1,8 @@
 # Skill Router
 
-[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub Repository](https://github.com/Yuzc-001/skill-router) · [Issues](https://github.com/Yuzc-001/skill-router/issues) · [Release Notes](./docs/release-notes-v0.1.1.md)
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub Repository](https://github.com/Yuzc-001/skill-router) · [Issues](https://github.com/Yuzc-001/skill-router/issues) · [Release Notes](./CHANGELOG.md)
 
-[![Version](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v0.3.0-0B1738?style=flat-square)](./CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-2FAE73?style=flat-square)](./LICENSE)
 [![Type](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
 [![Default](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
@@ -70,9 +70,9 @@ skill-router/
 
 ## Current release
 
-**v0.1.1** — Maintenance release: adds Integration & Messaging capability category, tightens public surface documentation.
+**v0.3.0** — Portability and routing logic fixes: removes hardcoded environment-specific family names, closes Bootstrap→Step 0 sequencing gap, adds explicit invoke action after routing decisions, unifies route/invoke terminology, and syncs resolution-order.md throughout.
 
-See [release notes](docs/release-notes-v0.1.1.md) for details.
+See [CHANGELOG](CHANGELOG.md) for full details.
 
 ## Read next
 

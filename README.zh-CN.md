@@ -1,8 +1,8 @@
 # Skill Router
 
-[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub 仓库](https://github.com/Yuzc-001/skill-router) · [问题反馈](https://github.com/Yuzc-001/skill-router/issues) · [版本说明](./docs/release-notes-v0.1.1.md)
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [GitHub 仓库](https://github.com/Yuzc-001/skill-router) · [问题反馈](https://github.com/Yuzc-001/skill-router/issues) · [版本说明](./CHANGELOG.md)
 
-[![版本](https://img.shields.io/badge/version-v0.1.1-0B1738?style=flat-square)](./CHANGELOG.md)
+[![版本](https://img.shields.io/badge/version-v0.3.0-0B1738?style=flat-square)](./CHANGELOG.md)
 [![许可](https://img.shields.io/badge/license-MIT-2FAE73?style=flat-square)](./LICENSE)
 [![类型](https://img.shields.io/badge/type-routing%20layer-4C6FFF?style=flat-square)](./SKILL.md)
 [![默认策略](https://img.shields.io/badge/default-reuse--first-2FAE73?style=flat-square)](./docs/how-it-works.md)
@@ -70,9 +70,9 @@ skill-router/
 
 ## 当前版本
 
-**v0.1.1** — 维护版本：新增 Integration & Messaging 能力分类，完善公开承诺文档。
+**v0.3.0** — 可移植性与路由逻辑修复：移除硬编码的私有环境家族名、补全 Bootstrap→Step 0 的衔接逻辑、在路由结论处加入明确的 invoke 动作、统一 route/invoke 术语，并同步更新 resolution-order.md。
 
-详见 [release notes](docs/release-notes-v0.1.1.md)。
+详见 [CHANGELOG](CHANGELOG.md)。
 
 ## 接着读
 
