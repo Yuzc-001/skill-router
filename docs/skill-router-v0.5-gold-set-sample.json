@@ -1,0 +1,386 @@
+[
+  {
+    "id": "sr-v0.5-001",
+    "family": "no_route",
+    "task": "What's the capital of France?",
+    "installed_skills": [
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" },
+      { "name": "pdf", "description": "Create and edit PDF documents.", "trusted": true, "scope": "pdf" },
+      { "name": "github", "description": "Interact with GitHub issues and PRs.", "trusted": true, "scope": "github" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": ["discover_candidates", "vet_candidate", "allow_extended_reasoning"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-002",
+    "family": "installed_default",
+    "task": "Create a PowerPoint deck from these notes.",
+    "installed_skills": [
+      { "name": "pptx", "description": "Create and edit PowerPoint decks.", "trusted": true, "scope": "slides" },
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": ["pptx"],
+      "forbidden_classes": ["discover_candidates", "ask_one_clarification"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-003",
+    "family": "installed_default",
+    "task": "Do we already have a skill for PDF work?",
+    "installed_skills": [
+      { "name": "pdf", "description": "Create, edit, and read PDF files.", "trusted": true, "scope": "pdf" },
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": ["pdf"],
+      "forbidden_classes": ["discover_candidates"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-004",
+    "family": "installed_default",
+    "task": "Use the github skill for this PR.",
+    "installed_skills": [
+      { "name": "github", "description": "Interact with GitHub issues, PRs, and runs.", "trusted": true, "scope": "github" },
+      { "name": "find-skills", "description": "Discover installable skills.", "trusted": true, "scope": "discovery" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "github"
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": ["github"],
+      "forbidden_classes": ["discover_candidates", "allow_reasoned_comparison"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-005",
+    "family": "sufficiency_boundary",
+    "task": "Make a polished report from these notes.",
+    "installed_skills": [
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": ["docx"],
+      "forbidden_classes": ["discover_candidates"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-006",
+    "family": "discovery",
+    "task": "I need a skill for a service none of my installed tools support.",
+    "installed_skills": [
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" },
+      { "name": "pdf", "description": "Create and edit PDF files.", "trusted": true, "scope": "pdf" },
+      { "name": "github", "description": "Interact with GitHub issues and PRs.", "trusted": true, "scope": "github" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": ["use_installed"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-007",
+    "family": "vetting",
+    "task": "I found this third-party skill. Should I install it?",
+    "installed_skills": [
+      { "name": "skill-router", "description": "Route skill choices.", "trusted": true, "scope": "routing" },
+      { "name": "find-skills", "description": "Discover installable skills.", "trusted": true, "scope": "discovery" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      { "name": "mystery-skill", "description": "Enhances your workflow.", "trusted": false, "scope": "unknown", "source_type": "third_party_unknown", "permissions": ["filesystem", "network"] }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": ["mystery-skill"],
+      "forbidden_classes": ["use_installed", "discover_candidates"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-008",
+    "family": "crowded_environment",
+    "task": "Search current API docs for this library.",
+    "installed_skills": [
+      { "name": "brave-search", "description": "Broad web search.", "trusted": true, "scope": "search" },
+      { "name": "tavily-search", "description": "AI-optimized search.", "trusted": true, "scope": "search" },
+      { "name": "weather", "description": "Weather forecast skill.", "trusted": true, "scope": "weather" },
+      { "name": "docx", "description": "Word documents.", "trusted": true, "scope": "docs" },
+      { "name": "github", "description": "GitHub operations.", "trusted": true, "scope": "github" }
+    ],
+    "active_skill": null,
+    "local_defaults": [
+      { "scope": "search_api_docs", "skill": "brave-search", "confidence": "high" }
+    ],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "high", "notes": ["only search tools are relevant"] },
+    "expected": {
+      "decision_class": "use_local_default",
+      "allowed_skills": ["brave-search"],
+      "forbidden_classes": ["discover_candidates", "allow_extended_reasoning"],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-009",
+    "family": "ambiguity_clarification",
+    "task": "Send this message.",
+    "installed_skills": [
+      { "name": "feishu-send", "description": "Send messages to Feishu.", "trusted": true, "scope": "feishu" },
+      { "name": "telegram-send", "description": "Send messages to Telegram.", "trusted": true, "scope": "telegram" },
+      { "name": "generic-messaging", "description": "Generic messaging helper.", "trusted": true, "scope": "messaging" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "medium", "notes": ["destination missing"] },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": ["discover_candidates", "allow_extended_reasoning"],
+      "max_explanation_class": "short",
+      "requires_clarification_on_missing_field": "destination_platform"
+    }
+  },
+  {
+    "id": "sr-v0.5-010",
+    "family": "override_governance",
+    "task": "Create a presentation.",
+    "installed_skills": [
+      { "name": "pptx", "description": "Create and edit PowerPoint decks.", "trusted": true, "scope": "slides" },
+      { "name": "pdf", "description": "Create and edit PDF files.", "trusted": true, "scope": "pdf" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      { "scope": "reports", "skill": "pdf", "source": "explicit_user_preference", "durable": true }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": ["override should not leak"] },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": ["pptx"],
+      "forbidden_classes": ["use_override"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-011",
+    "family": "sufficiency_boundary",
+    "task": "I need the best possible output, not just okay.",
+    "installed_skills": [
+      { "name": "docx", "description": "Create and edit Word documents.", "trusted": true, "scope": "docs" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": ["raised quality bar"] },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": ["use_installed"],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-012",
+    "family": "explanation_boundary",
+    "task": "Walk me through your routing logic for this one.",
+    "installed_skills": [
+      { "name": "brave-search", "description": "Broad web search.", "trusted": true, "scope": "search" },
+      { "name": "tavily-search", "description": "AI-optimized search.", "trusted": true, "scope": "search" }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "full",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": { "noise_level": "low", "notes": [] },
+    "expected": {
+      "decision_class": "allow_extended_reasoning",
+      "allowed_skills": ["brave-search", "tavily-search"],
+      "forbidden_classes": [],
+      "max_explanation_class": "extended"
+    }
+  }
+]

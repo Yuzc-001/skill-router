@@ -1,82 +1,90 @@
 # Use Cases
 
-## When Skill Router helps
+Skill Router v0.5 is for the moments when skill choice itself is creating waste.
 
-### "Do we already have a skill for this?"
-
-The user has many skills installed and cannot remember if one covers their current need. Skill Router inspects the installed environment and points to the best match — or confirms that no match exists.
-
-### "Which skill should I use?"
-
-Multiple installed skills could fit. Skill Router picks the strongest match based on the dominant capability and briefly explains the choice.
-
-### Preventing unnecessary installation
-
-A user is about to search for and install a new skill, but an installed skill already covers the need. Skill Router catches this by checking installed capabilities first.
-
-### Safe discovery
-
-No installed skill fits. Skill Router searches for candidates, evaluates them, and routes unfamiliar options through vetting before recommending installation.
-
-### Forgotten skills
-
-The user installed a skill months ago and forgot about it. Skill Router finds it during the installed-match step and routes the task there, saving a redundant installation.
+Not every task needs it.
+Only the tasks below are worth the routing layer.
 
 ---
 
-## When Skill Router stays out of the way
+## High-value use cases
 
-### Simple tasks
+### 1. “Do we already have a skill for this?”
+The user suspects the environment may already contain what they need, but does not want to waste turns rediscovering it.
 
-"What's 2 + 2?" — No skill needed. No routing commentary.
+### 2. “Which installed skill should be the default here?”
+More than one installed skill looks plausible, and the overlap is recurring enough that unstable choice is becoming a cost.
 
-### Obviously matched tasks
+### 3. “Is the current environment actually insufficient?”
+Before discovery, the agent needs a disciplined check that the installed set is truly not enough.
 
-"Create a PowerPoint presentation" with `pptx` installed — one obvious match, route silently.
+### 4. “Should this new candidate even enter the environment?”
+A new skill has been found, but it is unfamiliar or high-scope. Skill Router adds the admission gate before recommendation.
 
-### User explicitly names a skill
-
-"Use the pdf skill for this" — respect the explicit choice, no second-guessing.
-
-### Tasks that don't need skills
-
-A quick answer, a one-liner, a small edit — just do it. Skills add overhead to trivial tasks.
+### 5. “This overlap keeps coming back.”
+The same conflict cluster keeps reopening. Skill Router is useful here because a stable default can reduce future comparison cost.
 
 ---
 
-## Scenario walkthroughs
+## Low-value cases where Skill Router should stay out
 
-### Scenario 1: New task, strong installed match
+### 1. Simple direct tasks
+If the task should just be done, do it.
 
-> **User:** "Create a detailed report from these sales figures."
-> **Installed:** docx, xlsx, pdf, pptx
-> **Skill Router thinks:** Dominant capability = Document Creation. `docx` is a direct match. Enough.
-> **Result:** Routes to `docx`. No commentary.
+### 2. Obvious single-skill matches
+If one installed skill is clearly enough, use it without narration.
 
-### Scenario 2: New task, no installed match
+### 3. Tasks where the user explicitly named the skill
+Respect explicit intent. Do not reopen selection.
 
-> **User:** "Deploy this app to Kubernetes with auto-scaling."
-> **Installed:** docx, xlsx, pdf, pptx, frontend-design
-> **Skill Router thinks:** Dominant capability = System Administration (deployment). No installed skill covers this.
-> **Result:** States the gap. Proceeds to discovery. Presents candidates for review.
+### 4. Tasks where more routing detail would not change the next action
+If the answer would still be the same, the routing layer adds no value.
 
-### Scenario 3: Multiple matches, needs disambiguation
+---
 
-> **User:** "Create a visual report with interactive charts from this dataset."
-> **Installed:** xlsx, frontend-design, docx, pdf
-> **Skill Router thinks:** Dominant capability = Data Analysis + Document Creation. `xlsx` handles data and charts. `frontend-design` handles interactive web visuals. The word "interactive" tips toward `frontend-design` for the deliverable, with `xlsx` for data processing.
-> **Result:** Recommends `frontend-design` for the interactive output, notes `xlsx` for data prep. Brief explanation.
+## Short examples
 
-### Scenario 4: User about to redundantly install
+### Example A — reuse beats discovery
+User: “Do we already have a skill for making slides?”
 
-> **User:** "Is there a skill for creating formatted PDF reports?"
-> **Installed:** pdf, docx
-> **Skill Router thinks:** `pdf` is already installed and handles PDF creation.
-> **Result:** "You already have the `pdf` skill installed — it handles formatted PDF creation."
+Good use of Skill Router:
+- check installed reality first
+- return the installed slide skill if it already exists
+- avoid discovery if the installed path is sufficient
 
-### Scenario 5: Discovery finds questionable candidate
+### Example B — overlap should converge
+User: “Analyze this data and give me a chart.”
+Installed environment has two or three plausible options.
 
-> **User:** "Find me a skill for automated email outreach."
-> **Installed:** (no email skills)
-> **Skill Router discovers:** `email-blaster-pro` by anonymous author, requests full filesystem and network access.
-> **Result:** Flags concerns during vetting. Notes the broad permissions relative to the stated purpose. Suggests looking for alternatives from known sources.
+Good use of Skill Router:
+- apply the stable default for this overlap cluster
+- start execution
+- do not make the user choose unless they asked
+
+### Example C — insufficiency justifies discovery
+User: “I need a skill for a capability none of my installed tools cover.”
+
+Good use of Skill Router:
+- say the gap clearly
+- keep discovery small
+- recommend only a few candidates
+
+### Example D — unfamiliar candidate needs admission control
+User: “I found this third-party skill. Should I install it?”
+
+Good use of Skill Router:
+- do not treat discovery as trust
+- apply vetting before recommendation
+
+---
+
+## Bottom line
+
+Skill Router v0.5 helps when it reduces:
+- rediscovery
+- repeated comparison
+- repeated installation
+- unstable defaults
+- unnecessary routing tokens
+
+Outside those cases, it should vanish.

@@ -1,48 +1,126 @@
 # Why Skill Router
 
-## The problem changes as skill collections grow
+## Because crowded skill environments create waste
 
-Early on, the problem with skills is simple: **not enough capability**. You don't have a skill for presentations. You don't have a skill for spreadsheets. Every gap is obvious and the fix is clear — install more skills.
+When a skill environment is small, missing capability is the main problem.
+You do not have a skill for the task, so you go find one.
 
-But at some point, the bottleneck shifts. You have 10, 20, 50 skills installed. The problem is no longer missing capability. It becomes:
+But once the environment becomes crowded, the bottleneck changes.
+The problem is no longer just missing capability.
+The problem becomes wasted judgment.
 
-- **Too many possible skills.** Three skills could handle this task. Which one?
-- **Too much rediscovery.** You search for "a skill that does X" and install something new, forgetting that you already had one that does X.
-- **Too much repeated installation.** Skills pile up because nobody remembers what's already there.
-- **Too much cognitive overhead.** The question "which skill should I use?" becomes harder than the task itself.
+You start seeing things like:
+- a skill already exists, but nobody remembers it
+- two or three installed skills overlap and the default choice keeps wobbling
+- discovery happens even when the installed set was already good enough
+- new skills get installed because comparison was easier than memory
+- the question “which skill should I use?” starts costing more than the task itself
 
-This is the selection overhead problem. Skill Router is built for this stage.
+Skill Router exists for this stage.
+
+---
+
+## The old trap
+
+A routing system can easily become a useless middle layer.
+
+It starts with good intentions:
+- explain the categories
+- compare the options
+- give routing logic
+- add a framework for choosing
+
+But if it does not reduce actual waste, all it does is add:
+- more tokens
+- more ceremony
+- more delay
+- more reasons not to just do the work
+
+That is the trap v0.5 is explicitly trying to avoid.
+
+---
+
+## What Skill Router is for now
+
+Skill Router v0.5 is not for “helping choose skills” in the abstract.
+
+It is for one thing:
+
+# reducing unnecessary skill-selection cost
+
+That means reducing:
+- repeated discovery
+- repeated comparison
+- repeated installation
+- repeated hesitation
+- repeated routing explanation
+
+If it cannot reduce those, it should stay out of the way.
+
+---
 
 ## What Skill Router is not
 
-Skill Router is not a search engine, a package manager, or a meta-layer that should speak on every task. It is not a reason to install more skills.
+Skill Router is not:
+- a universal taxonomy engine
+- a package manager
+- a search engine
+- a mandatory pre-execution layer
+- a meta-governor that deserves to speak on every task
 
-It is a **low-presence decision layer** for the specific moment when skill choice itself becomes part of the problem.
+It only deserves to exist when it changes the next real action in a useful way.
 
-## The core design decisions
+---
 
-### Installed reality beats local preference
+## The new standard
 
-Skill Router routes based on what you actually have installed — not what an ideal setup would look like. If you have a `pdf` skill and it can handle the task, Skill Router uses it. It does not suggest that you install a "better" PDF skill.
+The standard is no longer:
 
-### Discovery is for insufficiency, not novelty
+> can this system describe skill choice intelligently?
 
-Skill Router only searches for new skills when the installed set genuinely cannot handle the task. "There might be something better" is never a reason to search.
+The standard is:
 
-### Quiet by default
+# does this system reduce waste in a crowded skill environment?
 
-The best Skill Router interaction is one you barely notice. It should not announce itself, narrate its process, or add routing commentary to simple tasks. It speaks only when a genuine routing decision was made that matters to you.
+That is a much harder standard.
+And it is the right one.
 
-### Vet before unfamiliar install
+---
 
-When new skills are found through discovery, Skill Router reviews them before recommending installation — especially when they come from unfamiliar sources. This is not gatekeeping. It is informed installation.
+## When it earns its keep
 
-## Who this is for
+Skill Router earns its keep when it helps produce outcomes like these:
+- “We already have the right skill. Use that.”
+- “This task does not need routing. Just do it.”
+- “Installed options are not enough. Discover a small candidate set.”
+- “This candidate is unfamiliar. Vet it before bringing it in.”
+- “This overlap keeps recurring. Set a stable default and stop re-comparing.”
 
-Skill Router is for anyone operating in an environment where multiple skills are installed and the question "which one should I use?" comes up regularly. This includes:
+Those are small interventions.
+But they are the kind that lower entropy over time.
 
-- Developers with large toolkits
-- Teams sharing skill collections
-- Anyone who has accumulated enough skills that they sometimes forget what they have
+---
 
-If you have 2–3 skills and always know which one to use, you probably don't need Skill Router yet. When you do, it will be here.
+## Why low presence matters
+
+A routing layer that speaks too often is self-defeating.
+
+If it explains itself every time,
+if it shows its framework every time,
+if it turns obvious execution into routing theater,
+then it becomes part of the waste it was supposed to reduce.
+
+That is why v0.5 treats silence as a feature, not a weakness.
+
+---
+
+## Bottom line
+
+Skill Router is worth keeping only if it makes skill-heavy environments feel:
+- more reusable
+- more stable
+- less noisy
+- less repetitive
+- less wasteful
+
+If it cannot do that, it should be cut down or cut out.

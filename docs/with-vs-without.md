@@ -1,125 +1,123 @@
 # With vs Without Skill Router
 
-Side-by-side comparison of workflows with and without Skill Router active.
+This file compares environments with and without Skill Router v0.5.
+
+The goal is not to show that routing always helps.
+The goal is to show where a routing runtime actually reduces waste — and where it should stay out of the way.
 
 ---
 
-## Scenario 1: User needs a formatted report
+## Scenario 1: The task should just proceed
 
 ### Without Skill Router
-
-1. User: "Create a formatted report from these meeting notes."
-2. Agent scans available skills... considers docx, pdf, maybe xlsx
-3. Agent: "I can use the docx skill to create a Word document, or the pdf skill to create a PDF. Which would you prefer? I could also create a spreadsheet if you want tabular data..."
-4. User: "Just... make a report."
-5. Agent creates the report using docx.
-
-**Problem:** Unnecessary back-and-forth. The user didn't ask for a choice — they asked for a report.
+User asks for a small direct task. The agent either does it directly or wastes a few turns thinking about tools.
 
 ### With Skill Router
+Skill Router stays silent because no routing decision is needed.
 
-1. User: "Create a formatted report from these meeting notes."
-2. Skill Router identifies dominant capability (Document Creation), matches to `docx`, confirms it's sufficient.
-3. Agent creates the report using docx. No commentary about the decision.
-
-**Result:** Same outcome, fewer steps, no cognitive overhead for the user.
+### What improved
+- zero routing tokens spent
+- zero extra decision ceremony
+- simple task stays simple
 
 ---
 
-## Scenario 2: User has forgotten an installed skill
+## Scenario 2: A good installed skill is forgotten
 
 ### Without Skill Router
-
-1. User: "I need to create some slides. Is there a good skill for that?"
-2. Agent searches a skill registry
-3. Agent: "I found `slide-maker-pro` and `deck-builder`. Want me to install one?"
-4. User installs `slide-maker-pro`
-5. User now has both `pptx` (installed months ago, forgotten) and `slide-maker-pro` (redundant)
-
-**Problem:** Redundant installation. The user already had what they needed.
+The agent starts searching for a new skill, or asks the user which one to use, even though a sufficient installed skill already exists.
 
 ### With Skill Router
+Skill Router checks installed reality first and returns the shortest useful resolution:
 
-1. User: "I need to create some slides. Is there a good skill for that?"
-2. Skill Router checks installed skills first. Finds `pptx`.
-3. Agent: "You already have the `pptx` skill installed — it handles slide creation."
+`Use the installed skill.`
 
-**Result:** No unnecessary installation. User rediscovers what they already have.
+### What improved
+- no redundant discovery
+- no redundant installation
+- faster return to execution
 
 ---
 
-## Scenario 3: Genuine capability gap
+## Scenario 3: Overlapping installed skills create friction
 
 ### Without Skill Router
-
-1. User: "Deploy this to AWS."
-2. Agent tries to do it with general knowledge
-3. Result is incomplete or error-prone
-4. User: "Is there a skill for this?"
-5. Agent searches, finds multiple candidates
-6. User installs the first result without evaluation
-
-**Problem:** No systematic capability check. No vetting of the discovered skill.
+Two or three installed skills all seem plausible. The agent starts comparing them, explaining tradeoffs, and consuming tokens before work starts.
 
 ### With Skill Router
+Skill Router applies a stable default for the overlap cluster and moves on.
 
-1. User: "Deploy this to AWS."
-2. Skill Router checks installed skills. No match for cloud deployment.
-3. Agent: "None of your installed skills handle AWS deployment. Let me find candidates."
-4. Skill Router searches, finds candidates, applies vetting checklist
-5. Agent presents vetted options with brief rationale
-
-**Result:** Gap is identified immediately. Candidates are vetted before recommendation.
+### What improved
+- comparison cost collapses
+- repeated overlap converges instead of re-opening every time
+- user is not forced into tool selection unless they asked for it
 
 ---
 
-## Scenario 4: Simple task, no skill needed
-
-### Without Skill Router (over-eager routing)
-
-1. User: "What's the capital of France?"
-2. Agent: "Let me check if there's a geography skill installed... I don't see one. Should I search for a geography knowledge skill?"
-3. User: "Just answer the question."
-
-**Problem:** Routing overhead on a trivial task.
-
-### With Skill Router
-
-1. User: "What's the capital of France?"
-2. Skill Router: (silent — task doesn't need any skill)
-3. Agent: "Paris."
-
-**Result:** No routing overhead. Simple tasks stay simple.
-
----
-
-## Scenario 5: Multiple installed skills could fit
+## Scenario 4: Installed reality is good enough, not perfect
 
 ### Without Skill Router
-
-1. User: "Analyze this CSV and create a chart."
-2. Agent: "I could use xlsx, or I could use frontend-design for a web chart, or I could use the pdf skill to create a PDF with an embedded chart. Here are the pros and cons of each..."
-3. User is now making a tool decision instead of getting work done
-
-**Problem:** The user is forced into a skill selection process they didn't ask for.
+The agent may start searching for a theoretically better option somewhere else.
 
 ### With Skill Router
+Skill Router applies the sufficiency test and stays with the installed path.
 
-1. User: "Analyze this CSV and create a chart."
-2. Skill Router identifies dominant capability (Data Analysis), routes to `xlsx`.
-3. Agent: "Using `xlsx` for the analysis and chart."
-4. Work proceeds.
+### What improved
+- less novelty-seeking
+- less discovery overhead
+- stronger default reuse
 
-**Result:** Quick, decisive routing. One brief note. Work starts immediately.
+---
+
+## Scenario 5: The environment is genuinely insufficient
+
+### Without Skill Router
+Discovery can happen late, chaotically, or after failed attempts with the wrong installed tools.
+
+### With Skill Router
+Skill Router states the gap early, then keeps discovery small and focused.
+
+### What improved
+- earlier recognition of true gaps
+- less random exploration
+- smaller candidate set
+
+---
+
+## Scenario 6: The candidate is unfamiliar
+
+### Without Skill Router
+A candidate may be recommended or installed before anyone asks whether it is trustworthy or over-scoped.
+
+### With Skill Router
+Skill Router inserts one explicit admission gate:
+
+`Candidate is unfamiliar. Vet before recommendation.`
+
+### What improved
+- safer expansion of the environment
+- less entropy introduced by bad installs
+- clearer boundary between finding and trusting
 
 ---
 
 ## Summary
 
-| Situation | Without Skill Router | With Skill Router |
+| Situation | Without Skill Router | With Skill Router v0.5 |
 |---|---|---|
-| Obvious single match | Works, but might over-explain | Silent, fast |
-| Forgotten installed skill | Redundant installation | Rediscovery |
-| Genuine capability gap | Ad-hoc, unvetted | Systematic, vetted |
-| Simple task | Possible over-routing | Quiet, direct |
-| Multiple plausible matches | User forced to choose | Quick pick with brief note |
+| Simple task | Possible overthinking | Silence |
+| Forgotten installed skill | Redundant discovery/install | Reuse installed reality |
+| Overlap cluster | Repeated comparison | Stable default |
+| Good enough installed option | Novelty-seeking | Stay with sufficiency |
+| Real capability gap | Late / messy discovery | Early focused discovery |
+| Unfamiliar candidate | Trust too early | Vet before recommendation |
+
+---
+
+## Bottom line
+
+Skill Router v0.5 is useful only where it reduces waste.
+
+If a given scenario would not benefit from a default decision, discovery check, or vetting gate, the correct behavior is not “more routing”.
+
+The correct behavior is disappearance.

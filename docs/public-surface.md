@@ -1,44 +1,86 @@
-﻿# Public Surface
+# Public Surface
 
-This document defines what Skill Router publicly guarantees, what it may rely on locally, and where the boundary sits.
+This document defines what Skill Router v0.5 publicly promises.
+
+The goal is to keep the public contract small, durable, and tied to real runtime value.
+
+---
 
 ## Public guarantees
 
 Skill Router publicly guarantees that it will:
-- resolve from the user's actual installed environment first
-- prefer reuse of sufficient installed skills before discovery
-- move to discovery only when current capability is clearly insufficient
-- recommend some form of safety review before unfamiliar third-party installation
-- stay quiet when routing adds no value
+- prefer installed reality before discovery
+- trigger discovery only for genuine insufficiency
+- recommend vetting before unfamiliar installation
+- stay quiet when routing would not change the next real action
+- reduce unnecessary routing commentary rather than adding more of it
+- support better defaults without trying to replace agent judgment
 
-These guarantees are product promises.
-They should remain true even when the surrounding skill ecosystem changes.
+These are the durable product promises.
 
-## What is not guaranteed
+---
+
+## What is not publicly guaranteed
 
 Skill Router does **not** publicly guarantee:
-- that a specific local skill name exists
-- that a dedicated discovery skill is installed
-- that a dedicated vetting skill is installed
-- that one workspace's local shortcut map applies everywhere
+- that a specific skill name exists in every environment
+- that a specific discovery helper is installed
+- that a specific vetting helper is installed
+- that every environment has the same overlap clusters
+- that every task will go through a visible routing sequence
+- that a large local map or taxonomy will exist
+- that local defaults from one workspace generalize to another
 
-If those helpers exist, Skill Router may name them.
-If they do not, Skill Router should describe the next step generically.
+If a local helper exists, Skill Router may use or name it.
+If it does not, Skill Router should describe the next step generically.
+
+---
 
 ## Local layers are optional
 
-Local maps, overrides, and preferred helper skills are valid local optimizations.
-They are not part of the public contract.
+The following are local optimizations, not public promises:
+- stable defaults for recurring overlap clusters
+- environment-specific preferred skill names
+- local overrides for user preference
+- a local task-to-skill map
+- a known discovery helper
+- a known vetting helper
 
-Examples of local-only layers:
-- preferring one browser-control skill over another in a known workspace
-- naming a specific discovery skill because that environment already has it
-- naming a specific vetting skill because that environment already trusts it
+These layers are valid only if they reduce repeated routing waste.
+They are not part of the public guarantee.
 
-## Product rule
+---
 
-Public behavior must remain stable even when local names disappear.
+## Public boundary rule
+
+The public standard is simple:
+
+# if routing will not change the next real action, Skill Router should not speak
+
+That rule matters more than any local map shape or taxonomy detail.
+
+---
+
+## Product meaning of the boundary
+
+This is what the product publicly stands for:
+- fewer repeated comparisons
+- fewer redundant discoveries
+- fewer avoidable installations
+- fewer routing tokens burned on obvious decisions
+
+Not:
+- more explanation
+- more categories
+- more ceremony
+
+---
+
+## Bottom line
+
+Public behavior must remain useful even if every local helper disappears.
 
 That is the practical meaning of:
-
-> Installed reality beats local preference.
+- installed reality beats imagined tooling
+- discovery is for insufficiency, not novelty
+- silence is part of the product, not an absence of product

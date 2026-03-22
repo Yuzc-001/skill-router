@@ -1,0 +1,4907 @@
+[
+  {
+    "id": "sr-v0.5-001",
+    "family": "no_route",
+    "task": "What's the capital of France?",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "Create and edit PDF documents.",
+        "trusted": true,
+        "scope": "pdf"
+      },
+      {
+        "name": "github",
+        "description": "Interact with GitHub issues and PRs.",
+        "trusted": true,
+        "scope": "github"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates",
+        "vet_candidate",
+        "allow_extended_reasoning"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-002",
+    "family": "installed_default",
+    "task": "Create a PowerPoint deck from these notes.",
+    "installed_skills": [
+      {
+        "name": "pptx",
+        "description": "Create and edit PowerPoint decks.",
+        "trusted": true,
+        "scope": "slides"
+      },
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pptx"
+      ],
+      "forbidden_classes": [
+        "discover_candidates",
+        "ask_one_clarification"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-003",
+    "family": "installed_default",
+    "task": "Do we already have a skill for PDF work?",
+    "installed_skills": [
+      {
+        "name": "pdf",
+        "description": "Create, edit, and read PDF files.",
+        "trusted": true,
+        "scope": "pdf"
+      },
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pdf"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-004",
+    "family": "installed_default",
+    "task": "Use the github skill for this PR.",
+    "installed_skills": [
+      {
+        "name": "github",
+        "description": "Interact with GitHub issues, PRs, and runs.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "find-skills",
+        "description": "Discover installable skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "github"
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "github"
+      ],
+      "forbidden_classes": [
+        "discover_candidates",
+        "allow_reasoned_comparison"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-005",
+    "family": "sufficiency_boundary",
+    "task": "Make a polished report from these notes.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "docx"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-006",
+    "family": "discovery",
+    "task": "I need a skill for a service none of my installed tools support.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "Create and edit PDF files.",
+        "trusted": true,
+        "scope": "pdf"
+      },
+      {
+        "name": "github",
+        "description": "Interact with GitHub issues and PRs.",
+        "trusted": true,
+        "scope": "github"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-007",
+    "family": "vetting",
+    "task": "I found this third-party skill. Should I install it?",
+    "installed_skills": [
+      {
+        "name": "skill-router",
+        "description": "Route skill choices.",
+        "trusted": true,
+        "scope": "routing"
+      },
+      {
+        "name": "find-skills",
+        "description": "Discover installable skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "mystery-skill",
+        "description": "Enhances your workflow.",
+        "trusted": false,
+        "scope": "unknown",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "filesystem",
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "mystery-skill"
+      ],
+      "forbidden_classes": [
+        "use_installed",
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-008",
+    "family": "crowded_environment",
+    "task": "Search current API docs for this library.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad web search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "weather",
+        "description": "Weather forecast skill.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "docx",
+        "description": "Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "github",
+        "description": "GitHub operations.",
+        "trusted": true,
+        "scope": "github"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [
+      {
+        "scope": "search_api_docs",
+        "skill": "brave-search",
+        "confidence": "high"
+      }
+    ],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "only search tools are relevant"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_local_default",
+      "allowed_skills": [
+        "brave-search"
+      ],
+      "forbidden_classes": [
+        "discover_candidates",
+        "allow_extended_reasoning"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-009",
+    "family": "ambiguity_clarification",
+    "task": "Send this message.",
+    "installed_skills": [
+      {
+        "name": "feishu-send",
+        "description": "Send messages to Feishu.",
+        "trusted": true,
+        "scope": "feishu"
+      },
+      {
+        "name": "telegram-send",
+        "description": "Send messages to Telegram.",
+        "trusted": true,
+        "scope": "telegram"
+      },
+      {
+        "name": "generic-messaging",
+        "description": "Generic messaging helper.",
+        "trusted": true,
+        "scope": "messaging"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "destination missing"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates",
+        "allow_extended_reasoning"
+      ],
+      "max_explanation_class": "short",
+      "requires_clarification_on_missing_field": "destination_platform"
+    }
+  },
+  {
+    "id": "sr-v0.5-010",
+    "family": "override_governance",
+    "task": "Create a presentation.",
+    "installed_skills": [
+      {
+        "name": "pptx",
+        "description": "Create and edit PowerPoint decks.",
+        "trusted": true,
+        "scope": "slides"
+      },
+      {
+        "name": "pdf",
+        "description": "Create and edit PDF files.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "pdf",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "override should not leak"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pptx"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-011",
+    "family": "sufficiency_boundary",
+    "task": "I need the best possible output, not just okay.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised quality bar"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-012",
+    "family": "explanation_boundary",
+    "task": "Walk me through your routing logic for this one.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad web search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "full",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "allow_extended_reasoning",
+      "allowed_skills": [
+        "brave-search",
+        "tavily-search"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "extended"
+    }
+  },
+  {
+    "id": "sr-v0.5-013",
+    "family": "no_route",
+    "task": "Fix this typo.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pptx",
+        "description": "Create and edit PowerPoint decks.",
+        "trusted": true,
+        "scope": "slides"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates",
+        "allow_reasoned_comparison"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-014",
+    "family": "installed_default",
+    "task": "Summarize this URL.",
+    "installed_skills": [
+      {
+        "name": "summarize",
+        "description": "Summarize URLs and files.",
+        "trusted": true,
+        "scope": "summary"
+      },
+      {
+        "name": "proactive-agent",
+        "description": "Meta process improvement skill.",
+        "trusted": true,
+        "scope": "meta"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "summarize"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-015",
+    "family": "installed_default",
+    "task": "Post this issue update to GitHub.",
+    "installed_skills": [
+      {
+        "name": "github",
+        "description": "Interact with GitHub issues and PRs.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "generic-automation",
+        "description": "Generic automation helper.",
+        "trusted": true,
+        "scope": "automation"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "platform signal present"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "github"
+      ],
+      "forbidden_classes": [
+        "allow_reasoned_comparison",
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-016",
+    "family": "sufficiency_boundary",
+    "task": "Create a rough version; good enough is fine.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "low",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "lowered quality bar"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "docx"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-017",
+    "family": "discovery",
+    "task": "Find a skill for Kubernetes deployment.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Create and edit Word documents.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "Create and edit PDF files.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "production",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "no matching deployment skill"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-018",
+    "family": "vetting",
+    "task": "This official first-party skill exists; should I install it?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "official-skill",
+        "description": "Official tool for the target service.",
+        "trusted": true,
+        "scope": "service",
+        "source_type": "trusted_registry",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "trusted source candidate"
+      ]
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "official-skill"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-019",
+    "family": "crowded_environment",
+    "task": "Summarize this PDF.",
+    "installed_skills": [
+      {
+        "name": "pdf",
+        "description": "Read and edit PDF files.",
+        "trusted": true,
+        "scope": "pdf"
+      },
+      {
+        "name": "summarize",
+        "description": "Summarize URLs and files.",
+        "trusted": true,
+        "scope": "summary"
+      },
+      {
+        "name": "weather",
+        "description": "Weather forecast.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "github",
+        "description": "GitHub operations.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "cron-scheduling",
+        "description": "Cron and timers.",
+        "trusted": true,
+        "scope": "scheduling"
+      },
+      {
+        "name": "obsidian",
+        "description": "Obsidian notes.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "many irrelevant skills should be ignored"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pdf",
+        "summarize"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-020",
+    "family": "ambiguity_clarification",
+    "task": "Post this update.",
+    "installed_skills": [
+      {
+        "name": "github",
+        "description": "GitHub operations.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "feishu-send",
+        "description": "Send to Feishu.",
+        "trusted": true,
+        "scope": "feishu"
+      },
+      {
+        "name": "telegram-send",
+        "description": "Send to Telegram.",
+        "trusted": true,
+        "scope": "telegram"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "destination platform missing"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "allow_extended_reasoning",
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "requires_clarification_on_missing_field": "destination_platform"
+    }
+  },
+  {
+    "id": "sr-v0.5-021",
+    "family": "no_route",
+    "task": "Rename this heading.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-022",
+    "family": "no_route",
+    "task": "Add one sentence to this note.",
+    "installed_skills": [
+      {
+        "name": "obsidian",
+        "description": "Obsidian notes.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-023",
+    "family": "installed_default",
+    "task": "Do we already have a skill for cron jobs?",
+    "installed_skills": [
+      {
+        "name": "cron-scheduling",
+        "description": "Cron and timer scheduling.",
+        "trusted": true,
+        "scope": "scheduling"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "cron-scheduling"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-024",
+    "family": "installed_default",
+    "task": "Use the summarize skill for this webpage.",
+    "installed_skills": [
+      {
+        "name": "summarize",
+        "description": "Summarize URLs and files.",
+        "trusted": true,
+        "scope": "summary"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "summarize"
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "summarize"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-025",
+    "family": "sufficiency_boundary",
+    "task": "For a rough draft, this is fine.",
+    "installed_skills": [
+      {
+        "name": "pptx",
+        "description": "Slides.",
+        "trusted": true,
+        "scope": "slides"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "low",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pptx"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-026",
+    "family": "sufficiency_boundary",
+    "task": "This must be production-ready.",
+    "installed_skills": [
+      {
+        "name": "generic-automation",
+        "description": "General automation helper.",
+        "trusted": true,
+        "scope": "automation"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "production",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "technically possible but weak"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-027",
+    "family": "sufficiency_boundary",
+    "task": "I want the safest option, not just one that works.",
+    "installed_skills": [
+      {
+        "name": "broad-tool",
+        "description": "Broad helper with wide permissions.",
+        "trusted": true,
+        "scope": "general"
+      },
+      {
+        "name": "narrow-tool",
+        "description": "Narrow task-specific helper.",
+        "trusted": true,
+        "scope": "specific"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "narrow-tool"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-028",
+    "family": "discovery",
+    "task": "Find me a skill for Notion integration.",
+    "installed_skills": [
+      {
+        "name": "find-skills",
+        "description": "Discover installable skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-029",
+    "family": "discovery",
+    "task": "Ignore installed tools and find something new.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "find-skills",
+        "description": "Discover installable skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "explicit discovery request overrides reuse bias"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-030",
+    "family": "vetting",
+    "task": "Should I use this anonymous utility skill?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "anon-utility",
+        "description": "Useful helper.",
+        "trusted": false,
+        "scope": "utility",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "anon-utility"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-031",
+    "family": "vetting",
+    "task": "Should I install this self-authored local skill?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "my-local-skill",
+        "description": "My own helper.",
+        "trusted": true,
+        "scope": "custom",
+        "source_type": "self",
+        "permissions": [
+          "filesystem"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "my-local-skill"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-032",
+    "family": "vetting",
+    "task": "This official skill needs network access. Is that okay?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "official-net-skill",
+        "description": "Official network-backed helper.",
+        "trusted": true,
+        "scope": "service",
+        "source_type": "trusted_registry",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "trusted source but permission review still needed"
+      ]
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "official-net-skill"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-033",
+    "family": "override_governance",
+    "task": "Create a report.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "PDF docs.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "pdf",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_override",
+      "allowed_skills": [
+        "pdf"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-034",
+    "family": "override_governance",
+    "task": "Use pdf this one time.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "PDF docs.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "pdf"
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "one-off should not harden into override"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pdf"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short",
+      "must_not_update_default": true
+    }
+  },
+  {
+    "id": "sr-v0.5-035",
+    "family": "override_governance",
+    "task": "What should our recurring search default be now?",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [
+      {
+        "scope": "search_general",
+        "skill": "brave-search",
+        "confidence": "medium"
+      }
+    ],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "stable default discussion"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_local_default",
+      "allowed_skills": [
+        "brave-search",
+        "tavily-search"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-036",
+    "family": "crowded_environment",
+    "task": "Use the best default for this API-doc search in a huge environment.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "weather",
+        "description": "Weather.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "obsidian",
+        "description": "Notes.",
+        "trusted": true,
+        "scope": "notes"
+      },
+      {
+        "name": "github",
+        "description": "GitHub.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "cron-scheduling",
+        "description": "Cron.",
+        "trusted": true,
+        "scope": "scheduling"
+      },
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "extreme",
+      "notes": [
+        "irrelevant tools must not matter"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "brave-search",
+        "tavily-search"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-037",
+    "family": "crowded_environment",
+    "task": "Summarize this webpage in a noisy environment.",
+    "installed_skills": [
+      {
+        "name": "summarize",
+        "description": "Summarize URLs.",
+        "trusted": true,
+        "scope": "summary"
+      },
+      {
+        "name": "weather",
+        "description": "Weather.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "github",
+        "description": "GitHub.",
+        "trusted": true,
+        "scope": "github"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "one relevant tool"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "summarize"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-038",
+    "family": "ambiguity_clarification",
+    "task": "Post this update.",
+    "installed_skills": [
+      {
+        "name": "github",
+        "description": "GitHub.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "weibo-post",
+        "description": "Weibo posting.",
+        "trusted": true,
+        "scope": "weibo"
+      },
+      {
+        "name": "x-post",
+        "description": "X posting.",
+        "trusted": true,
+        "scope": "x"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "destination missing"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "requires_clarification_on_missing_field": "destination_platform"
+    }
+  },
+  {
+    "id": "sr-v0.5-039",
+    "family": "ambiguity_clarification",
+    "task": "I don't trust this installed skill.",
+    "installed_skills": [
+      {
+        "name": "pdf",
+        "description": "PDF helper.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "distrust alone should trigger one short clarification if needed"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-040",
+    "family": "explanation_boundary",
+    "task": "Compare brave-search and tavily-search for me.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "compare",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "allow_reasoned_comparison",
+      "allowed_skills": [
+        "brave-search",
+        "tavily-search"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "reasoned"
+    }
+  },
+  {
+    "id": "sr-v0.5-041",
+    "family": "installed_default",
+    "task": "Use weather for this forecast.",
+    "installed_skills": [
+      {
+        "name": "weather",
+        "description": "Weather forecasts.",
+        "trusted": true,
+        "scope": "weather"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "weather"
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "weather"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-042",
+    "family": "installed_default",
+    "task": "Do we already have a skill for Obsidian?",
+    "installed_skills": [
+      {
+        "name": "obsidian",
+        "description": "Work with Obsidian vaults.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "obsidian"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-043",
+    "family": "discovery",
+    "task": "Find a new report skill even though docx exists.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "find-skills",
+        "description": "Discover skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "explicit discovery despite installed sufficiency"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-044",
+    "family": "vetting",
+    "task": "This skill asks for full filesystem and network access. Install?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "broad-risky",
+        "description": "Do everything better.",
+        "trusted": false,
+        "scope": "unknown",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "filesystem",
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "broad-risky"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-045",
+    "family": "override_governance",
+    "task": "Always use pdf for reports.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "PDF docs.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "durable user preference"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_override",
+      "allowed_skills": [
+        "pdf"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-046",
+    "family": "crowded_environment",
+    "task": "In a 100-skill environment, just tell me the default and move.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "weather",
+        "description": "Weather.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "github",
+        "description": "GitHub.",
+        "trusted": true,
+        "scope": "github"
+      },
+      {
+        "name": "obsidian",
+        "description": "Obsidian.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [
+      {
+        "scope": "search_general",
+        "skill": "brave-search",
+        "confidence": "high"
+      }
+    ],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "extreme",
+      "notes": [
+        "simulate very noisy environment"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_local_default",
+      "allowed_skills": [
+        "brave-search"
+      ],
+      "forbidden_classes": [
+        "allow_extended_reasoning",
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-047",
+    "family": "ambiguity_clarification",
+    "task": "Send this via chat.",
+    "installed_skills": [
+      {
+        "name": "telegram-send",
+        "description": "Telegram sender.",
+        "trusted": true,
+        "scope": "telegram"
+      },
+      {
+        "name": "feishu-send",
+        "description": "Feishu sender.",
+        "trusted": true,
+        "scope": "feishu"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "channel ambiguous"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-048",
+    "family": "explanation_boundary",
+    "task": "Why that skill?",
+    "installed_skills": [
+      {
+        "name": "summarize",
+        "description": "Summarize URLs.",
+        "trusted": true,
+        "scope": "summary"
+      },
+      {
+        "name": "proactive-agent",
+        "description": "Meta process.",
+        "trusted": true,
+        "scope": "meta"
+      }
+    ],
+    "active_skill": "summarize",
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "why",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "allow_reasoned_comparison",
+      "allowed_skills": [
+        "summarize"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "reasoned"
+    }
+  },
+  {
+    "id": "sr-v0.5-049",
+    "family": "combination_path",
+    "task": "Extract text from this image and analyze the table.",
+    "installed_skills": [
+      {
+        "name": "ocr-skill",
+        "description": "OCR and text extraction.",
+        "trusted": true,
+        "scope": "ocr"
+      },
+      {
+        "name": "data-analysis",
+        "description": "Analyze data.",
+        "trusted": true,
+        "scope": "analysis"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "combination materially changes outcome"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_combination",
+      "allowed_skills": [
+        "ocr-skill",
+        "data-analysis"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-050",
+    "family": "combination_path",
+    "task": "I want the full workflow, not just one tool.",
+    "installed_skills": [
+      {
+        "name": "plan-skill",
+        "description": "Planning stage.",
+        "trusted": true,
+        "scope": "plan"
+      },
+      {
+        "name": "execute-skill",
+        "description": "Execution stage.",
+        "trusted": true,
+        "scope": "execute"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "explicit full-workflow request"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_combination",
+      "allowed_skills": [
+        "plan-skill",
+        "execute-skill"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-021",
+    "family": "no_route",
+    "task": "Rename this heading.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-022",
+    "family": "no_route",
+    "task": "Add one sentence to this note.",
+    "installed_skills": [
+      {
+        "name": "obsidian",
+        "description": "Obsidian notes.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-023",
+    "family": "installed_default",
+    "task": "Do we already have a skill for cron jobs?",
+    "installed_skills": [
+      {
+        "name": "cron-scheduling",
+        "description": "Cron and timer scheduling.",
+        "trusted": true,
+        "scope": "scheduling"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "cron-scheduling"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-024",
+    "family": "installed_default",
+    "task": "Use the summarize skill for this webpage.",
+    "installed_skills": [
+      {
+        "name": "summarize",
+        "description": "Summarize URLs and files.",
+        "trusted": true,
+        "scope": "summary"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": "summarize"
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "summarize"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-025",
+    "family": "sufficiency_boundary",
+    "task": "For a rough draft, this is fine.",
+    "installed_skills": [
+      {
+        "name": "pptx",
+        "description": "Slides.",
+        "trusted": true,
+        "scope": "slides"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "low",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "pptx"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-026",
+    "family": "sufficiency_boundary",
+    "task": "This must be production-ready.",
+    "installed_skills": [
+      {
+        "name": "generic-automation",
+        "description": "General automation helper.",
+        "trusted": true,
+        "scope": "automation"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "production",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "technically possible but weak"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-027",
+    "family": "discovery",
+    "task": "Find me a skill for Notion integration.",
+    "installed_skills": [
+      {
+        "name": "find-skills",
+        "description": "Discover installable skills.",
+        "trusted": true,
+        "scope": "discovery"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-028",
+    "family": "vetting",
+    "task": "Should I use this anonymous utility skill?",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "anon-utility",
+        "description": "Useful helper.",
+        "trusted": false,
+        "scope": "utility",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "anon-utility"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-029",
+    "family": "override_governance",
+    "task": "Create a report.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      },
+      {
+        "name": "pdf",
+        "description": "PDF docs.",
+        "trusted": true,
+        "scope": "pdf"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "pdf",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_override",
+      "allowed_skills": [
+        "pdf"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-030",
+    "family": "crowded_environment",
+    "task": "Use the best default for this API-doc search in a huge environment.",
+    "installed_skills": [
+      {
+        "name": "brave-search",
+        "description": "Broad search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "tavily-search",
+        "description": "AI-optimized search.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "weather",
+        "description": "Weather.",
+        "trusted": true,
+        "scope": "weather"
+      },
+      {
+        "name": "obsidian",
+        "description": "Notes.",
+        "trusted": true,
+        "scope": "notes"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": true,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "extreme",
+      "notes": [
+        "irrelevant tools must not matter"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "brave-search",
+        "tavily-search"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-031",
+    "family": "installed_default",
+    "task": "Use dedicated installed skill case 31.",
+    "installed_skills": [
+      {
+        "name": "dedicated-skill",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "general-skill",
+        "description": "General helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-032",
+    "family": "sufficiency_boundary",
+    "task": "Raised-bar sufficiency case 32.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak but technically compatible.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised quality bar should trigger insufficiency"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-033",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous destination case 33.",
+    "installed_skills": [
+      {
+        "name": "platform-a",
+        "description": "Platform A sender.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "platform-b",
+        "description": "Platform B sender.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one minimum clarification should resolve next action"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-034",
+    "family": "crowded_environment",
+    "task": "Noise resistance case 34.",
+    "installed_skills": [
+      {
+        "name": "relevant-skill",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-1",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-2",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "noise should not change decision"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-035",
+    "family": "override_governance",
+    "task": "Override boundary case 35.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "Default helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "Alternate helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "override should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-036",
+    "family": "installed_default",
+    "task": "Use dedicated installed skill case 36.",
+    "installed_skills": [
+      {
+        "name": "dedicated-skill",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "general-skill",
+        "description": "General helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-037",
+    "family": "sufficiency_boundary",
+    "task": "Raised-bar sufficiency case 37.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak but technically compatible.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised quality bar should trigger insufficiency"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-038",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous destination case 38.",
+    "installed_skills": [
+      {
+        "name": "platform-a",
+        "description": "Platform A sender.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "platform-b",
+        "description": "Platform B sender.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one minimum clarification should resolve next action"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-039",
+    "family": "crowded_environment",
+    "task": "Noise resistance case 39.",
+    "installed_skills": [
+      {
+        "name": "relevant-skill",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-1",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-2",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "noise should not change decision"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-040",
+    "family": "override_governance",
+    "task": "Override boundary case 40.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "Default helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "Alternate helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "override should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-041",
+    "family": "installed_default",
+    "task": "Use dedicated installed skill case 41.",
+    "installed_skills": [
+      {
+        "name": "dedicated-skill",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "general-skill",
+        "description": "General helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-042",
+    "family": "sufficiency_boundary",
+    "task": "Raised-bar sufficiency case 42.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak but technically compatible.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised quality bar should trigger insufficiency"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-043",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous destination case 43.",
+    "installed_skills": [
+      {
+        "name": "platform-a",
+        "description": "Platform A sender.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "platform-b",
+        "description": "Platform B sender.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one minimum clarification should resolve next action"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-044",
+    "family": "crowded_environment",
+    "task": "Noise resistance case 44.",
+    "installed_skills": [
+      {
+        "name": "relevant-skill",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-1",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-2",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "noise should not change decision"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-045",
+    "family": "override_governance",
+    "task": "Override boundary case 45.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "Default helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "Alternate helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "override should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-046",
+    "family": "installed_default",
+    "task": "Use dedicated installed skill case 46.",
+    "installed_skills": [
+      {
+        "name": "dedicated-skill",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "general-skill",
+        "description": "General helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-047",
+    "family": "sufficiency_boundary",
+    "task": "Raised-bar sufficiency case 47.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak but technically compatible.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "high",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised quality bar should trigger insufficiency"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-048",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous destination case 48.",
+    "installed_skills": [
+      {
+        "name": "platform-a",
+        "description": "Platform A sender.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "platform-b",
+        "description": "Platform B sender.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one minimum clarification should resolve next action"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-049",
+    "family": "crowded_environment",
+    "task": "Noise resistance case 49.",
+    "installed_skills": [
+      {
+        "name": "relevant-skill",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-1",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-2",
+        "description": "Irrelevant helper.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "high",
+      "notes": [
+        "noise should not change decision"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant-skill"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-050",
+    "family": "override_governance",
+    "task": "Override boundary case 50.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "Default helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "Alternate helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "override should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-081",
+    "family": "no_route",
+    "task": "Trivial direct task 81.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-082",
+    "family": "installed_default",
+    "task": "Installed default task 82.",
+    "installed_skills": [
+      {
+        "name": "dedicated",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "generic",
+        "description": "Generic helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-083",
+    "family": "sufficiency_boundary",
+    "task": "Quality-bar case 83.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "production",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised bar"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-084",
+    "family": "discovery",
+    "task": "No installed match case 84.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "true capability gap"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-085",
+    "family": "vetting",
+    "task": "Candidate vetting case 85.",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "unknown-candidate",
+        "description": "Unknown helper.",
+        "trusted": false,
+        "scope": "unknown",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "unknown-candidate"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-086",
+    "family": "override_governance",
+    "task": "Override governance case 86.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "A helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "B helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "scope should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-087",
+    "family": "crowded_environment",
+    "task": "Crowded environment case 87.",
+    "installed_skills": [
+      {
+        "name": "relevant",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-a",
+        "description": "Noise.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-b",
+        "description": "Noise.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "extreme",
+      "notes": [
+        "noise should be ignored"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-088",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous task case 88.",
+    "installed_skills": [
+      {
+        "name": "dest-a",
+        "description": "Destination A.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "dest-b",
+        "description": "Destination B.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one clarification should resolve destination"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-089",
+    "family": "explanation_boundary",
+    "task": "Explain choice case 89.",
+    "installed_skills": [
+      {
+        "name": "search-a",
+        "description": "Search A.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "search-b",
+        "description": "Search B.",
+        "trusted": true,
+        "scope": "search"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "why",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "allow_reasoned_comparison",
+      "allowed_skills": [
+        "search-a",
+        "search-b"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "reasoned"
+    }
+  },
+  {
+    "id": "sr-v0.5-090",
+    "family": "combination_path",
+    "task": "Combination path case 90.",
+    "installed_skills": [
+      {
+        "name": "step-1",
+        "description": "Step 1 helper.",
+        "trusted": true,
+        "scope": "step1"
+      },
+      {
+        "name": "step-2",
+        "description": "Step 2 helper.",
+        "trusted": true,
+        "scope": "step2"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "explicit multi-step path justified"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_combination",
+      "allowed_skills": [
+        "step-1",
+        "step-2"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-091",
+    "family": "no_route",
+    "task": "Trivial direct task 91.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "no_route",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-092",
+    "family": "installed_default",
+    "task": "Installed default task 92.",
+    "installed_skills": [
+      {
+        "name": "dedicated",
+        "description": "Dedicated helper.",
+        "trusted": true,
+        "scope": "dedicated"
+      },
+      {
+        "name": "generic",
+        "description": "Generic helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "dedicated"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-093",
+    "family": "sufficiency_boundary",
+    "task": "Quality-bar case 93.",
+    "installed_skills": [
+      {
+        "name": "weak-installed",
+        "description": "Weak helper.",
+        "trusted": true,
+        "scope": "general"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "production",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "raised bar"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-094",
+    "family": "discovery",
+    "task": "No installed match case 94.",
+    "installed_skills": [
+      {
+        "name": "docx",
+        "description": "Word docs.",
+        "trusted": true,
+        "scope": "docs"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "true capability gap"
+      ]
+    },
+    "expected": {
+      "decision_class": "discover_candidates",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "use_installed"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-095",
+    "family": "vetting",
+    "task": "Candidate vetting case 95.",
+    "installed_skills": [],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [
+      {
+        "name": "unknown-candidate",
+        "description": "Unknown helper.",
+        "trusted": false,
+        "scope": "unknown",
+        "source_type": "third_party_unknown",
+        "permissions": [
+          "network"
+        ]
+      }
+    ],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": false,
+      "prefer_discovery": true,
+      "prefer_safest": true,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "vet_candidate",
+      "allowed_skills": [
+        "unknown-candidate"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-096",
+    "family": "override_governance",
+    "task": "Override governance case 96.",
+    "installed_skills": [
+      {
+        "name": "skill-a",
+        "description": "A helper.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "skill-b",
+        "description": "B helper.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [
+      {
+        "scope": "reports",
+        "skill": "skill-b",
+        "source": "explicit_user_preference",
+        "durable": true
+      }
+    ],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "scope should remain narrow"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "skill-a"
+      ],
+      "forbidden_classes": [
+        "use_override"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-097",
+    "family": "crowded_environment",
+    "task": "Crowded environment case 97.",
+    "installed_skills": [
+      {
+        "name": "relevant",
+        "description": "Relevant helper.",
+        "trusted": true,
+        "scope": "relevant"
+      },
+      {
+        "name": "noise-a",
+        "description": "Noise.",
+        "trusted": true,
+        "scope": "noise"
+      },
+      {
+        "name": "noise-b",
+        "description": "Noise.",
+        "trusted": true,
+        "scope": "noise"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "extreme",
+      "notes": [
+        "noise should be ignored"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_installed",
+      "allowed_skills": [
+        "relevant"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short",
+      "must_ignore_noise": true
+    }
+  },
+  {
+    "id": "sr-v0.5-098",
+    "family": "ambiguity_clarification",
+    "task": "Ambiguous task case 98.",
+    "installed_skills": [
+      {
+        "name": "dest-a",
+        "description": "Destination A.",
+        "trusted": true,
+        "scope": "a"
+      },
+      {
+        "name": "dest-b",
+        "description": "Destination B.",
+        "trusted": true,
+        "scope": "b"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "medium",
+      "notes": [
+        "one clarification should resolve destination"
+      ]
+    },
+    "expected": {
+      "decision_class": "ask_one_clarification",
+      "allowed_skills": [],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  },
+  {
+    "id": "sr-v0.5-099",
+    "family": "explanation_boundary",
+    "task": "Explain choice case 99.",
+    "installed_skills": [
+      {
+        "name": "search-a",
+        "description": "Search A.",
+        "trusted": true,
+        "scope": "search"
+      },
+      {
+        "name": "search-b",
+        "description": "Search B.",
+        "trusted": true,
+        "scope": "search"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "why",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": []
+    },
+    "expected": {
+      "decision_class": "allow_reasoned_comparison",
+      "allowed_skills": [
+        "search-a",
+        "search-b"
+      ],
+      "forbidden_classes": [],
+      "max_explanation_class": "reasoned"
+    }
+  },
+  {
+    "id": "sr-v0.5-100",
+    "family": "combination_path",
+    "task": "Combination path case 100.",
+    "installed_skills": [
+      {
+        "name": "step-1",
+        "description": "Step 1 helper.",
+        "trusted": true,
+        "scope": "step1"
+      },
+      {
+        "name": "step-2",
+        "description": "Step 2 helper.",
+        "trusted": true,
+        "scope": "step2"
+      }
+    ],
+    "active_skill": null,
+    "local_defaults": [],
+    "local_overrides": [],
+    "candidate_skills": [],
+    "user_constraints": {
+      "quality_bar": "default",
+      "prefer_reuse": true,
+      "prefer_discovery": false,
+      "prefer_safest": false,
+      "prefer_fastest": false,
+      "prefer_cheapest": false,
+      "explanation_depth": "minimal",
+      "allow_clarification": true,
+      "explicit_skill_name": null
+    },
+    "environment": {
+      "noise_level": "low",
+      "notes": [
+        "explicit multi-step path justified"
+      ]
+    },
+    "expected": {
+      "decision_class": "use_combination",
+      "allowed_skills": [
+        "step-1",
+        "step-2"
+      ],
+      "forbidden_classes": [
+        "discover_candidates"
+      ],
+      "max_explanation_class": "short"
+    }
+  }
+]

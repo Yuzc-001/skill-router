@@ -1,92 +1,94 @@
 # Local Overrides
 
-How to handle user-specific routing preferences that override Skill Router's default behavior.
+How local overrides work in Skill Router v0.5.
+
+Local overrides are valid only when they reduce recurring routing waste.
+They are not the center of the system.
 
 ---
 
-## What Are Local Overrides?
+## What a local override is
 
-Local overrides are explicit user preferences about how tasks should be routed. They take precedence over Skill Router's default resolution order.
+A local override is a user or environment preference that changes the default routing result.
 
 Examples:
-- "Always use `docx` for reports, never `pdf`"
-- "I prefer `frontend-design` for any web-related task"
-- "Don't suggest new skills unless I explicitly ask"
-- "For data tasks, always try `xlsx` first"
+- “Always use X for reports.”
+- “Do not suggest new skills unless I explicitly ask.”
+- “For this workspace, prefer the platform-specific skill over the generic one.”
+
+If an override does not change the next real action, it is not an override worth recording.
 
 ---
 
-## How to Detect Them
+## When to record one
 
-Local overrides come from:
+Record a local override when:
+- the user explicitly states a stable preference
+- the same correction happens repeatedly
+- the environment has a durable preference that reduces recurring comparison
 
-1. **Explicit statements** — the user directly says "always use X for Y"
-2. **Repeated corrections** — the user keeps redirecting from one skill to another
-3. **Environment configuration** — a local config file or memory entry specifying preferences
-4. **Conversation history** — past conversations where the user established a preference
-
----
-
-## How to Apply Them
-
-### Override beats default resolution
-
-If the user has an explicit preference, it wins. Do not run the full resolution sequence and then override at the end — skip directly to the preferred skill.
-
-> User preference: "Always use `pdf` for reports"
-> Task: "Create a quarterly report"
-> Default resolution: Would route to `docx`
-> With override: Route to `pdf` immediately
-
-### Overrides are scoped
-
-A preference for "reports" does not extend to "presentations" unless the user says so. Apply overrides narrowly.
-
-### Overrides are revocable
-
-If the user says "actually, let's try `docx` this time," respect that. Overrides are preferences, not laws.
+Do not record one-off whims as stable routing rules.
 
 ---
 
-## Storage
+## How to apply one
 
-If the environment supports persistent memory or configuration:
+If a valid local override exists, apply it early.
+Do not run a long routing sequence and then override at the end.
 
-- Store overrides as simple key-value pairs: `task_type → preferred_skill`
-- Include the user's original statement for context
-- Timestamp the override so stale preferences can be revisited
+The point of a local override is to shorten decisions, not lengthen them.
 
-Example:
+---
 
-```
-override: reports → pdf
-  source: "Always use pdf for my reports" (2025-01-15)
-  
-override: web_tasks → frontend-design
-  source: "I like the frontend-design skill for anything web-related" (2025-02-03)
+## Scope rule
+
+Overrides should stay narrow.
+
+A preference for reports does not automatically generalize to every document-like task.
+A platform preference for one workspace does not automatically become a global rule.
+
+Keep overrides as small as the real preference.
+
+---
+
+## Revocation rule
+
+Overrides are preferences, not permanent law.
+
+If the user changes their mind, the old override should stop applying.
+If the environment changes enough that the override no longer reduces waste, remove or ignore it.
+
+---
+
+## Good example
+
+```text
+reports → docx | Confidence: high
+Notes: user explicitly prefers docx output for recurring report work
 ```
 
----
-
-## Conflicts
-
-If an override conflicts with what Skill Router would choose:
-
-1. Follow the override
-2. Do not mention the conflict unless the override leads to a clearly worse outcome
-3. If the outcome is clearly worse, mention it once: "I used `pdf` for this per your preference. If you'd like, `docx` might give you better table formatting for this kind of report."
-4. Accept the user's decision either way
+Why this is good:
+- it changes the next action
+- it will likely recur
+- it reduces repeated comparison
 
 ---
 
-## Example: Full Override Flow
+## Bad example
 
-**Stored override:** `data_analysis → xlsx`
+```text
+maybe_web_task → something | Confidence: low
+Notes: seemed useful once in a vague conversation
+```
 
-**Task:** "Analyze this JSON file and give me insights."
+Why this is bad:
+- it is vague
+- it does not describe a stable recurring pattern
+- it will not reliably reduce waste
 
-**Default resolution:** No strong installed match (JSON analysis isn't a primary skill). Might discover or route to general capability.
+---
 
-**With override:** Route to `xlsx`. The user prefers it for data tasks. It can read JSON and produce analysis.
+## Bottom line
 
-**Outcome:** The override provides a clear, fast routing decision that respects the user's preference. No discovery needed.
+A good local override is a small, durable shortcut.
+If it does not reliably shorten future routing, it should not be kept.

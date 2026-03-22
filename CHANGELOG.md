@@ -2,6 +2,57 @@
 
 All notable changes to Skill Router will be documented in this file.
 
+## [0.5.0] — 2026-03-22
+
+### Changed
+
+- **Ruthless reset of product center** — Skill Router is no longer framed primarily as a routing layer or taxonomy guide. `v0.5.0` re-centers the product on one runtime purpose: reducing unnecessary skill-selection cost in crowded skill environments.
+- **North star rewritten** — the product now optimizes for lower routing waste, lower repeated comparison, lower repeated discovery, lower repeated installation, and stronger stable defaults.
+- **`SKILL.md` fully rewritten** — the main skill contract now follows a much smaller runtime path: decide whether routing is needed, prefer the strongest installed default, test genuine insufficiency, discover only for real gaps, and vet unfamiliar candidates before recommendation.
+- **Public contract tightened** — `docs/public-surface.md` now promises less but means it more strongly: installed reality first, discovery only for insufficiency, vet-before-admission, and silence whenever routing would not change the next real action.
+- **Docs re-authored around v0.5** — `docs/how-it-works.md`, `docs/why-skill-router.md`, `docs/with-vs-without.md`, `docs/use-cases.md`, `references/resolution-order.md`, `references/task-to-skill-map.md`, `references/micro-routing-examples.md`, and `references/local-overrides-example.md` were all rewritten to match the new anti-waste runtime model.
+- **Task-to-skill map demoted from center to utility** — the map is no longer presented as a growing universal routing table. It now exists only as a lightweight local-default record for recurring overlap clusters that genuinely reduce future routing waste.
+- **Conflict handling narrowed** — `v0.5.0` focuses the main path on only the conflicts that materially matter: installed vs discover, dedicated vs general, platform-specific vs generic, recurring overlap clusters, and unfamiliar install vs safe reuse.
+- **Output discipline hardened** — preferred output shapes are now short and executable (`Use X.`, `Installed set is not enough; discover candidates.`, `Candidate is unfamiliar; vet before recommendation.`, `This task does not need skill-router.`).
+- **Release surface updated for the reset** — added `docs/skill-router-v0.5-ruthless-reset.md` and aligned repository entry points around the v0.5 reset.
+
+### Notes
+
+`v0.5.0` is intentionally disruptive.
+
+It is not an incremental improvement to the old routing doctrine.
+It is a cut-down-and-rebuild release.
+
+The standard for this release is simple:
+
+# if Skill Router does not reduce real decision waste, it does not deserve to speak
+
+Primary reading for this release:
+- `docs/skill-router-v0.5-ruthless-reset.md`
+- `docs/why-skill-router.md`
+- `docs/how-it-works.md`
+- `docs/public-surface.md`
+
+## [0.4.0] — 2026-03-20
+
+### Changed
+
+- **Product positioning sharpened** — Skill Router is now explicitly framed as a low-presence routing layer that resolves real selection conflicts **without replacing agent judgment**.
+- **Boundary rule added** — introduced the explicit product rule: *when skill choice is not the problem, Skill Router should disappear*.
+- **Conflict-set heuristic added** — shifted emphasis away from ever-finer taxonomy expansion and toward resolving recurring overlap clusters where default skill choice is genuinely unclear.
+- **Resolution order tightened** — added a new first gate that asks whether routing is needed at all before checking maps or capabilities.
+- **Non-trigger guidance strengthened** — clarified that Skill Router should not activate for simple tasks, obvious single-skill matches, already-active correct skills, or cases where more routing detail would not change the default decision.
+- **Public contract clarified** — `docs/public-surface.md` now explicitly states that Skill Router reduces selection waste without replacing judgment, and that local conflict sets are not part of the public guarantee.
+- **README / docs language upgraded** — repository messaging now reflects the product's actual role: a judgment-preserving, conflict-aware, low-bureaucracy routing layer.
+
+### Notes
+
+This release is intentionally philosophical and behavioral rather than feature-heavy. The goal is not to route more often. The goal is to route **better, less often, and with clearer boundaries**.
+
+Dedicated release surface:
+- `docs/release-notes-v0.4.0.md`
+- `docs/skill-router-v0.4-product-milestone.md`
+
 ## [0.3.0] — 2026-03-18
 
 ### Fixed
@@ -42,7 +93,7 @@ All notable changes to Skill Router will be documented in this file.
 - **example-skills edge case** in Guidance on Edge Cases — always prefer non-example version when duplicates exist
 - **Platform Context Rule** in `references/capability-taxonomy.md` — platform signals override generic matching
 - **8 new capability categories** in `references/capability-taxonomy.md`: Image Generation, Visual Content Production, Image Processing, Video & Animation, OCR & Text Extraction, Translation, Social Media Publishing, Development Workflow (total: 21 categories, up from 13)
-- **60+ task-to-skill mappings** in `references/task-to-skill-map.md` — full coverage of installed skills including baoyu-\*, ccg:\*, remotion, ppocrv5, data-analysis, deepl, release-skills, and more (previously ~10 entries)
+- **60+ task-to-skill mappings** in `references/task-to-skill-map.md` — full coverage of installed skills including baoyu-* , ccg:* , remotion, ppocrv5, data-analysis, deepl, release-skills, and more (previously ~10 entries)
 - **18 routing examples** in `references/micro-routing-examples.md` — replaced generic examples with real installed skill patterns including platform routing, pipeline routing, and tiebreaker scenarios
 
 ### Changed

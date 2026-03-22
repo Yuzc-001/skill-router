@@ -1,79 +1,103 @@
 # Task-to-Skill Map
 
-A two-layer routing table. The portable layer ships with Skill Router. The local layer is built automatically from your installed environment and grows through use.
+A lightweight local-default record for recurring routing decisions.
+
+This file is no longer the center of the system.
+It exists only to prevent repeated comparison in places where the environment has already taught us a stable default.
 
 ---
 
-## How to Use
+## What this file is for
 
-1. Identify the task type from the user's request
-2. Check the Local Map first — if an entry exists and the skill is installed, route directly
-3. Check the Portable Defaults if no local entry exists
-4. If still no match, run the full resolution sequence from SKILL.md
-5. After every new routing decision, add the result to the Local Map (Behavior 6)
+Use this file to record:
+- recurring overlap clusters that already have a stable default
+- installed defaults that repeatedly save comparison cost
+- local overrides that the user clearly prefers
 
----
+Do **not** use this file to:
+- build a giant universal routing taxonomy
+- force every task into a mapping table
+- record distinctions that do not change the next action
+- replace judgment with a lookup ritual
 
-## Portable Defaults
-
-These mappings apply in virtually any environment where these skill types exist. They use generic capability descriptions, not specific skill names.
-
-```
-Word document (.docx)          → the installed skill whose primary purpose is .docx creation
-PDF creation / reading         → the installed skill whose primary purpose is .pdf work
-Presentation (.pptx)           → the installed skill whose primary purpose is .pptx creation
-Spreadsheet / CSV analysis     → the installed skill whose primary purpose is .xlsx/.csv work
-Web UI / frontend              → the installed skill whose primary purpose is HTML/CSS/JS interfaces
-Translation                    → the installed skill whose primary purpose is language translation
-Image generation               → the installed skill whose primary purpose is text-to-image generation
-Video / audio processing       → the installed skill whose primary purpose is video/audio manipulation
-OCR / text extraction          → the installed skill whose primary purpose is extracting text from images or files
-Code review                    → the installed skill whose primary purpose is reviewing code changes
-Git commit message             → the installed skill whose primary purpose is generating commit messages
-Project release                → the installed skill whose primary purpose is versioned releases
-```
-
-These are resolved at routing time by matching descriptions — not by hardcoding skill names. If your environment has no skill matching a description, fall through to the full resolution sequence.
+If a mapping does not reduce repeated routing waste, it does not belong here.
 
 ---
 
-## Local Map
+## How to use it
 
-Built automatically by Skill Router when running in your environment. Updated after each new routing decision (Behavior 6: Self-Updating Map).
+1. Ask whether the task even needs routing
+2. If routing is needed, check whether this file already contains a stable local default
+3. If yes, use it and stop
+4. If no, resolve the task through the main path in `SKILL.md`
+5. Only record the result here if it is likely to reduce recurring comparison later
 
-If this section is empty, Skill Router will run a Bootstrap Scan on first invocation to populate it. See SKILL.md — Bootstrap Protocol.
+---
 
+## What belongs here
+
+Good entries usually look like one of these:
+- a recurring browser-skill overlap with a stable default
+- a recurring search overlap with a stable default
+- a platform-specific preference that repeatedly beats the generic option
+- a strong local preference the user wants preserved
+
+Bad entries usually look like one of these:
+- one-off tasks
+- mappings that are obvious without recording
+- distinctions that never change the next action
+- speculative defaults for tools not actually installed
+
+---
+
+## Entry format
+
+Use a compact format:
+
+```text
+Task / overlap cluster → default skill | Confidence: high|medium
+Notes: only if they materially change routing
 ```
-# Local Map — populated automatically. Do not edit manually.
-# Format: Task Type → Skill Name | Confidence: high | medium
-#         Notes: any routing nuances
 
+Keep notes short.
+If the note is longer than the routing decision, the entry is probably not worth keeping.
+
+---
+
+## Local Defaults
+
+```text
+# Record only stable defaults that reduce recurring routing waste.
+# Example format:
+# Browser control / interactive web tasks → pinchtab-browser | Confidence: high
+# Notes: prefer agent-browser only when headless fallback is specifically needed
 ```
 
 ---
 
-## Bootstrap Scan Output
+## Local Overrides
 
-After a Bootstrap Scan, this section is populated with discovered mappings from your installed environment. Skill Router reads each installed skill's name and description, matches it to a capability category, and adds the mapping here.
-
-Example of what a populated Local Map looks like after bootstrap:
-
-```
-# (example — your actual map will reflect your installed skills)
-# Text-to-image generation     → gemini-image          | Confidence: high
-# Post to WeChat               → baoyu-post-to-wechat  | Confidence: high
-# Feature development          → ccg:feat              | Confidence: high
-# Data analysis (multi-format) → data-analysis         | Confidence: high
+```text
+# Record only explicit user or environment overrides.
+# Example format:
+# Web search → tavily-search | Confidence: medium
+# Notes: user prefers Tavily summaries over broader search results in this environment
 ```
 
 ---
 
-## Maintaining This Map
+## Maintenance rule
 
-The Local Map is maintained automatically by Skill Router. Manual edits are valid but not required.
+This file should stay small.
 
-**Add manually when:**
-- You want to override an auto-generated entry
-- You have a strong preference for a specific skill over the default
+If it keeps growing without clearly reducing repeated comparison, it is being misused.
 
-**Do not add to Portable Defaults** — that section is part of the published skill and should remain environment-agnostic.
+The purpose of this map is not coverage.
+The purpose is convergence.
+
+---
+
+## Bottom line
+
+A good task-to-skill map is not comprehensive.
+A good task-to-skill map quietly removes a few recurring sources of decision waste.
